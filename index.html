@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STI RoomFinder - Real-Time Classroom Tracker</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="./src/styles/main.css">
+    
+    <!-- Three.js Library for 3D Viewer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="dark-mode">
+    <div id="app-container">
+        <!-- Sidebar -->
+        <aside id="sidebar"></aside>
+
+        <!-- Main Content -->
+        <div id="main-content">
+            <!-- Header -->
+            <header id="header"></header>
+
+            <!-- Screen Content -->
+            <main id="content">
+                <!-- Login Screen -->
+                <div id="login-screen" class="screen"></div>
+
+                <!-- Dashboard Screen -->
+                <div id="dashboard-screen" class="screen hidden">
+                    <div class="dashboard-container"></div>
+                </div>
+
+                <!-- Room Status Screen -->
+                <div id="room-status-screen" class="screen hidden">
+                    <div class="room-status-container"></div>
+                </div>
+
+                <!-- Reservation Screen -->
+                <div id="reservation-screen" class="screen hidden">
+                    <div class="reservation-container"></div>
+                </div>
+
+                <!-- Approval Screen -->
+                <div id="approval-screen" class="screen hidden">
+                    <div class="approval-container"></div>
+                </div>
+
+                <!-- Profile Screen -->
+                <div id="profile-screen" class="screen hidden">
+                    <div class="profile-container"></div>
+                </div>
+
+                <!-- 3D Viewer Screen -->
+                <div id="3d-viewer-screen" class="screen hidden">
+                    <div class="viewer-3d-container"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Firebase SDK (using CDN) -->
+    <script>
+        // Configuration placeholder - Firebase auth will be handled by app
+        console.log('HTML scripts section loading...');
+        
+        // Add global error handler
+        window.addEventListener('error', (event) => {
+            console.error('Global error:', event.error);
+        });
+        
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('Unhandled rejection:', event.reason);
+        });
+    </script>
+
+    <!-- Theme Manager (Must load first) -->
+    <script type="module" src="./src/utils/themeManager.js"></script>
+
+    <!-- Main Application (Must load last) -->
+    <script type="module">
+        console.log('Main script block starting...');
+        import('./src/app.js').then(module => {
+            console.log('app.js imported successfully');
+        }).catch(error => {
+            console.error('Failed to import app.js:', error);
+        });
+    </script>
+</body>
+</html>
